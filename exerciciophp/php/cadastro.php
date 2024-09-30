@@ -23,12 +23,12 @@
 <body>
 <?php
 // verifica se os dados foram enviados por GET
-if (isset($_GET['nome']) && isset($_GET['idade']) && isset($_GET['email']) && isset($_GET['curso'])){
+if (isset($_POST['nome']) && isset($_POST['idade']) && isset($_POST['email']) && isset($_POST['curso'])){
     //dados enviados pelo formulário
-    $nome = htmlspecialchars($_GET['nome']);
-    $email = htmlspecialchars($_GET['idade']);
-    $idade = htmlspecialchars($_GET['email']);
-    $curso = htmlspecialchars($_GET['curso']);
+    $nome = htmlspecialchars($_POST['nome']);
+    $email = htmlspecialchars($_POST['idade']);
+    $idade = htmlspecialchars($_POST['email']);
+    $curso = htmlspecialchars($_POST['curso']);
 
     // mostra os dados
     echo "<h2>Informações recebidas:</h2>";

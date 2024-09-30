@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box; /* inclui padding e bordas no cálculo da largura */
+    box-sizing: border-box; /* inclui padding e bordas no cálculo da largura e o asterisco é um seletor universal */
 }
 body {
     font-family: Arial, sans-serif;
@@ -36,7 +36,7 @@ input[type="text"], input[type="email"] {
 }
 input[type="text"]:focus, input[type="email"]:focus {
     border-color: #3498db;
-    outline: none;
+    outline: none; /*desenha uma linha ao redor de um elemento*/
 }
 input[type="submit"] {
     background-color: #2980b9;

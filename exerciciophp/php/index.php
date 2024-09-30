@@ -8,7 +8,7 @@
     </head>
     <body>
         <h2>Cadastro de Alunos</h2>
-        <form action="cadastro.php" method="GET">
+        <form action="cadastro.php" method="POST">
             <label for="nome">Nome:</label><br>
             <input type="text" id="nome" name="nome" required><br><br>
 
