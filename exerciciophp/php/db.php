@@ -20,6 +20,35 @@
         $pdo = $database->getConnection();
     ?>
 </head>
+<body>
+<?php
+// Verifica se os dados foram enviados via GET
+if (isset($_GET['nome']) && isset($_GET['idade']) && isset($_GET['email']) && isset($_GET['curso'])){
+    // Captura os dados enviados pelo formulário
+    $nome = htmlspecialchars($_GET['nome']);
+    $email = htmlspecialchars($_GET['idade']);
+    $idade = htmlspecialchars($_GET['email']);
+    $curso = htmlspecialchars($_GET['curso']);
+
+    // Exibe os dados capturados
+    echo "<h2>Informações recebidas:</h2>";
+    echo "<p><strong>Nome:</strong> " . $nome . "<p>";
+    echo "<p><strong>Idade:</strong> " . $idade . "<p>";
+    echo "<p><strong>E-mail:</strong> " . $email . "<p>";
+    echo "<p><strong>Curso:</strong> " . $curso . "<p>";
+    // Verifica se a variável $pdo, que deve ser uma instância de PDO, está definida e é válida
+    // Prepara uma consulta SQL para selecionar as colunas 'id' e 'nome' da tabela 'usuario'
+    $stmt = $pdo->prepare("INSERT into escola_sql(nome, idade, email, curso) values ('$nome', '$idade','$email','$curso')");
+
+    // Executa a consulta preparada
+    $stmt->execute();
+} else{
+    echo "Nenhum dado foi enviado.";
+}
+?>
+
+<!--conexão com o banco de dados
+
 <?php
 class Database {
     private $pdo;
