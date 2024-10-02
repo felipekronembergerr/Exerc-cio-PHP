@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
     <?php 
         $host = 'localhost';
         $db = 'escola_sql';
@@ -45,4 +46,4 @@ if (isset($_POST['nome']) && isset($_POST['idade']) && isset($_POST['email']) &&
 } else{
     echo "Nenhum dado foi enviado.";
 }
-?>
+
