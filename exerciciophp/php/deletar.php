@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
 <?php 
 $host = 'localhost';
 $db = 'escola_sql';
@@ -20,12 +27,12 @@ if (isset($_GET['id'])) {
     $stmt->bindParam(':id', $id);
 
     if ($stmt->execute()) {
-        echo "Aluno excluído com sucesso.";
+        echo "<p class='success'>Aluno excluído com sucesso.</p>";
     } else {
-        echo "Erro ao excluir aluno.";
+        echo "<p class='error'>Erro ao excluir aluno.</p>";
     }
 } else {
-    echo "ID não fornecido.";
+    echo "<p class='error'>ID não fornecido.</p>";
 }
 ?>
-<a href="cadastro.php">Voltar para a lista de alunos</a>
+<a href="index.php" class="btn-voltar">Voltar para a lista de alunos.</a>

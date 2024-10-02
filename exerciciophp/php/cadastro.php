@@ -32,7 +32,8 @@ if (isset($_POST['nome']) && isset($_POST['idade']) && isset($_POST['email']) &&
     $curso = htmlspecialchars($_POST['curso']);
 
     // mostra os dados
-    echo "<h2>Informações recebidas:</h2>";
+    echo "<h2>Aluno cadastrado com sucesso!</h2>";
+    echo "<h4>Informações recebidas:</h4>";
     echo "<p><strong>Nome:</strong> " . $nome . "<p>";
     echo "<p><strong>E-mail:</strong> " . $idade . "<p>";
     echo "<p><strong>Idade:</strong> " . $email . "<p>";
@@ -46,4 +47,7 @@ if (isset($_POST['nome']) && isset($_POST['idade']) && isset($_POST['email']) &&
 } else{
     echo "Nenhum dado foi enviado.";
 }
+?>
+<a href="index.php" class="btn-cadastrar">Cadastrar outro aluno.</a>
+
 

@@ -21,32 +21,10 @@
             <label for="curso">Curso:</label><br>
             <input type="text" id="curso" name="curso" required><br><br>
 
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Cadastrar">
         </form>
     </body>
 </html>
-<style>
-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border: 1px solid #2980b9;
-        }
-        th {
-            background-color: #2980b9;
-            color: white;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        tr:hover {
-            background-color: #e6f7ff;
-        }
-</style>
 <?php 
     $host = 'localhost';
     $db = 'escola_sql';
@@ -68,18 +46,23 @@ table {
 
     <h2>Lista de Alunos Cadastrados</h2>
     <table border="1">
-        <tr>
-            <th>Nome</th>
-            <th>Idade</th>
-            <th>E-mail</th>
-            <th>Curso</th>
-        </tr>
-        <?php foreach ($alunos as $aluno): ?>
-        <tr>
-            <td><?php echo htmlspecialchars($aluno['nome']); ?></td>
-            <td><?php echo htmlspecialchars($aluno['idade']); ?></td>
-            <td><?php echo htmlspecialchars($aluno['email']); ?></td>
-            <td><?php echo htmlspecialchars($aluno['curso']); ?></td>
-        </tr>
-        <?php endforeach; ?>
-    </table>
+    <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>E-mail</th>
+        <th>Curso</th>
+        <th>Ações</th>
+    </tr>
+    <?php foreach ($alunos as $aluno): ?>
+    <tr>
+        <td><?php echo htmlspecialchars($aluno['nome']); ?></td>
+        <td><?php echo htmlspecialchars($aluno['idade']); ?></td>
+        <td><?php echo htmlspecialchars($aluno['email']); ?></td>
+        <td><?php echo htmlspecialchars($aluno['curso']); ?></td>
+        <td>
+            <a href="deletar.php?id=<?php echo $aluno['id']; ?>" class="btn-excluir" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a> <!--se certifica que o usuário deseja excluir os dados por meio de um pop up-->
+        </td> 
+        
+    </tr>
+    <?php endforeach; ?>
+</table>
